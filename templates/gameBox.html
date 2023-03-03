@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container my-3">
+    <table class="table">
+        <thead>
+        <tr class="table-dark">
+            <th>게임 제목</th>
+            <th>게임 플레이</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if game_list %}
+
+        {% for gameLink in game_list %}
+        <tr>
+            <td>{{ gameLink.content }}</td>
+
+            <td><a href="{% url gameLink.link %}">게임 시작</a></td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <tr>
+            <td colspan="2">게임이 없습니다.</td>
+        </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+
+<script>
+const recommend_elements = document.getElementsByClassName("recommend");
+Array.from(recommend_elements).forEach(function(element) {
+    element.addEventListener('click', function() {
+        if(confirm("정말로 추천하시겠습니까?")) {
+            location.href = this.dataset.uri;
+        };
+    });
+});
+</script>
+{% endblock %}

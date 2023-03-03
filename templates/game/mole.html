@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>두더지 잡기</title>
+    <style>
+      .cell {
+        display: inline-block;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: 'yellow';
+        overflow: hidden;
+      }
+      .gopher,
+      .bomb {
+        width: 200px;
+        height: 200px;
+        bottom: 0;
+        position: absolute;
+        transition: bottom 1s;
+      }
+      .gopher {
+        background: url('/static/img/gopher.png') center center no-repeat;
+        background-size: 200px 200px;
+      }
+      .dead {
+        background: url('/static/img/dead_gopher.png') center center no-repeat;
+        background-size: 200px 200px;
+      }
+      .bomb {
+        background: url('/static/img/bomb.png') center center no-repeat;
+        background-size: 200px 200px;
+      }
+      .boom {
+        background: url('/static/img/explode.png') center center no-repeat;
+        background-size: 200px 200px;
+      }
+      .hidden {
+        bottom: -200px;
+      }
+      .hole {
+        width: 200px;
+        height: 150px;
+        position: absolute;
+        bottom: 0;
+        background: url('/static/img/mole-hole.png') center center no-repeat;
+        background-size: 200px 150px;
+      }
+      .hole-front {
+        width: 200px;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        background: url('/static/img/mole-hole-front.png') center center no-repeat;
+        background-size: 200px 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span id="timer">0</span>초&nbsp; <span id="score">0</span>점 &nbsp;Life :
+      <span id="life"></span>
+
+      <button id="start">시작</button>
+    </div>
+    <div id="game">
+      <div class="row">
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+        <div class="cell">
+          <div class="hole"></div>
+          <div class="gopher hidden"></div>
+          <div class="bomb hidden"></div>
+          <div class="hole-front"></div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/static/JavaScript/mole.js"></script>
+  </body>
+</html>
